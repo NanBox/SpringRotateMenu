@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/guillotine_medium_margin">
+            android:layout_marginTop="20dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/guillotine_divider_height" />
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:id="@+id/settings_group"

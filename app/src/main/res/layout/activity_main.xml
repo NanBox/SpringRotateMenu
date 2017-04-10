@@ -38,7 +38,7 @@
                 android:textColor="@android:color/white"
                 android:layout_gravity="center"
                 android:text="@string/activity"
-                android:textSize="@dimen/guillotine_item_text_size" />
+                android:textSize="24dp" />
         </android.support.v7.widget.Toolbar>
 
         <!--<ImageView-->
