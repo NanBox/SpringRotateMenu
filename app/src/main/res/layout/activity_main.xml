@@ -4,14 +4,12 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/guillotine_background_dark"
     android:orientation="vertical">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_gravity="top"
-        android:background="@color/guillotine_background" />
+        android:layout_gravity="top" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +18,10 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            style="@style/Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:title=""
             app:contentInsetStart="0dp">
 
             <ImageView
@@ -31,21 +32,23 @@
                 android:src="@drawable/ic_menu_90" />
 
             <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
                 android:layout_gravity="center"
                 android:text="@string/activity"
                 android:textSize="@dimen/guillotine_item_text_size" />
         </android.support.v7.widget.Toolbar>
 
-        <ImageView
-            style="@style/ImageView.ContentItem"
-            android:layout_marginTop="@dimen/guillotine_medium_margin"
-            android:src="@drawable/content_1" />
+        <!--<ImageView-->
+        <!--style="@style/ImageView.ContentItem"-->
+        <!--android:layout_marginTop="@dimen/guillotine_medium_margin"-->
+        <!--android:src="@drawable/content_1" />-->
 
-        <ImageView
-            style="@style/ImageView.ContentItem"
-            android:src="@drawable/content_2" />
+        <!--<ImageView-->
+        <!--style="@style/ImageView.ContentItem"-->
+        <!--android:src="@drawable/content_2" />-->
 
 
     </LinearLayout>

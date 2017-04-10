@@ -2,9 +2,10 @@
 <resources>
     <style name="AppTheme" parent="Theme.Guillotine"/>
 
-    <style name="Theme.Guillotine" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:colorPrimaryDark">@color/guillotine_background</item>
-        <item name="android:colorPrimary">@color/guillotine_background_dark</item>
+    <style name="Theme.Guillotine" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>

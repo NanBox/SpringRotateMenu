@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Guillotine</string>
+    <string name="app_name">SpringRotateMenu</string>
     <string name="profile">PROFILE</string>
     <string name="feed">FEED</string>
     <string name="activity">ACTIVITY</string>
