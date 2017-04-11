@@ -142,32 +142,36 @@ public class SpringRotateMenu extends FrameLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                mDownX = event.getRawX();
-                break;
-            case MotionEvent.ACTION_MOVE:
-                //滑动距离
-                float deltaX = event.getRawX() - mDownX;
-                //设置角度
-                float rotation = (deltaX / (float) (getWidth() * 0.8)) * ROTATE_COLLAPSE;
-                if (rotation <= ROTATE_EXPAND && rotation >= ROTATE_COLLAPSE) {
-                    setRotation(rotation);
-                } else if (rotation > ROTATE_EXPAND) {
-                    setRotation(ROTATE_EXPAND);
-                } else if (rotation < ROTATE_COLLAPSE) {
-                    setRotation(ROTATE_COLLAPSE);
-                }
-                break;
-            case MotionEvent.ACTION_UP:
-            case MotionEvent.ACTION_CANCEL:
-                if (getRotation() < ROTATE_COLLAPSE / 3) {
-                    collapse();
-                } else {
-                    expand();
-                }
-                break;
+        if (!expandAnimation.isRunning() && !collapseAnimation.isRunning()) {
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    mDownX = event.getRawX();
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    //滑动距离
+                    float deltaX = event.getRawX() - mDownX;
+                    //设置角度
+                    float rotation = (deltaX / (float) (getWidth() * 0.8)) * ROTATE_COLLAPSE;
+                    if (rotation <= ROTATE_EXPAND && rotation >= ROTATE_COLLAPSE) {
+                        setRotation(rotation);
+                    } else if (rotation > ROTATE_EXPAND) {
+                        setRotation(ROTATE_EXPAND);
+                    } else if (rotation < ROTATE_COLLAPSE) {
+                        setRotation(ROTATE_COLLAPSE);
+                    }
+                    break;
+                case MotionEvent.ACTION_UP:
+                case MotionEvent.ACTION_CANCEL:
+                    if (getRotation() < ROTATE_COLLAPSE / 3) {
+                        collapse();
+                    } else {
+                        expand();
+                    }
+                    break;
+            }
+            return true;
         }
-        return true;
+        return super.onTouchEvent(event);
     }
+
 }
