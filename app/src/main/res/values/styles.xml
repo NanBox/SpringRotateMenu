@@ -11,4 +11,21 @@
         <item name="android:layout_margin">15dp</item>
     </style>
 
+    <style name="CardView" />
+
+    <style name="CardView.MenuItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="cardElevation">5dp</item>
+    </style>
+
+    <style name="ImageView" />
+
+    <style name="ImageView.MenuItem">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">200dp</item>
+    </style>
+
 </resources>
