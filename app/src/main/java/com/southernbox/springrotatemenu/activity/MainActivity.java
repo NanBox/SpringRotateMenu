@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             actionBar.setTitle(null);
         }
 
-        springRotateMenu = (SpringRotateMenu) LayoutInflater.from(this).inflate(R.layout.menu, root, false);
+        springRotateMenu = (SpringRotateMenu) LayoutInflater.from(this)
+                .inflate(R.layout.menu, root, false);
         root.addView(springRotateMenu);
         springRotateMenu.setExpandButton(findViewById(R.id.iv_menu));
         springRotateMenu.setCollapseButton(springRotateMenu.findViewById(R.id.iv_menu));
@@ -94,17 +95,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.tv_stark:
                 tvStark.setTextColor(ContextCompat.getColor(mContext, R.color.colorAccent));
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new StarkFragment()).commit();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment, new StarkFragment())
+                        .commit();
                 tvTitle.setText(R.string.stark);
                 break;
             case R.id.tv_lannister:
                 tvLannister.setTextColor(ContextCompat.getColor(mContext, R.color.colorAccent));
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new LannisterFragment()).commit();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment, new LannisterFragment())
+                        .commit();
                 tvTitle.setText(R.string.lannister);
                 break;
             case R.id.tv_baratheon:
                 tvBaratheon.setTextColor(ContextCompat.getColor(mContext, R.color.colorAccent));
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new BaratheonFragment()).commit();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment, new BaratheonFragment())
+                        .commit();
                 tvTitle.setText(R.string.baratheon);
                 break;
         }

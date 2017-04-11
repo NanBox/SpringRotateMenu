@@ -14,11 +14,13 @@ import com.southernbox.springrotatemenu.R;
  * 拜拉席恩家族
  */
 
-public class BaratheonFragment extends Fragment{
+public class BaratheonFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_baratheon, container, false);
     }
 }

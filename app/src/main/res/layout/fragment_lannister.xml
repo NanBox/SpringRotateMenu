@@ -13,18 +13,18 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <android.support.v7.widget.CardView style="@style/CardView.MenuItem">
+            <android.support.v7.widget.CardView style="@style/CardView.FragmentItem">
 
                 <android.support.v7.widget.AppCompatImageView
-                    style="@style/ImageView.MenuItem"
+                    style="@style/ImageView.FragmentItem"
                     android:src="@drawable/tywin_lannister" />
 
             </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView style="@style/CardView.MenuItem">
+            <android.support.v7.widget.CardView style="@style/CardView.FragmentItem">
 
                 <android.support.v7.widget.AppCompatImageView
-                    style="@style/ImageView.MenuItem"
+                    style="@style/ImageView.FragmentItem"
                     android:src="@drawable/jaime_lannister" />
 
             </android.support.v7.widget.CardView>

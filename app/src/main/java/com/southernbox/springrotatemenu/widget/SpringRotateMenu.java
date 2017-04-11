@@ -54,11 +54,14 @@ public class SpringRotateMenu extends FrameLayout {
         this(context, null);
     }
 
-    public SpringRotateMenu(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public SpringRotateMenu(@NonNull Context context,
+                            @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public SpringRotateMenu(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
+    public SpringRotateMenu(@NonNull Context context,
+                            @Nullable AttributeSet attrs,
+                            @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         //默认为折叠并隐藏
         setRotation(ROTATE_COLLAPSE);
@@ -142,36 +145,36 @@ public class SpringRotateMenu extends FrameLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (!expandAnimation.isRunning() && !collapseAnimation.isRunning()) {
-            switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    mDownX = event.getRawX();
-                    break;
-                case MotionEvent.ACTION_MOVE:
-                    //滑动距离
-                    float deltaX = event.getRawX() - mDownX;
-                    //设置角度
-                    float rotation = (deltaX / (float) (getWidth() * 0.8)) * ROTATE_COLLAPSE;
-                    if (rotation <= ROTATE_EXPAND && rotation >= ROTATE_COLLAPSE) {
-                        setRotation(rotation);
-                    } else if (rotation > ROTATE_EXPAND) {
-                        setRotation(ROTATE_EXPAND);
-                    } else if (rotation < ROTATE_COLLAPSE) {
-                        setRotation(ROTATE_COLLAPSE);
-                    }
-                    break;
-                case MotionEvent.ACTION_UP:
-                case MotionEvent.ACTION_CANCEL:
-                    if (getRotation() < ROTATE_COLLAPSE / 3) {
-                        collapse();
-                    } else {
-                        expand();
-                    }
-                    break;
-            }
-            return true;
+        if (expandAnimation.isRunning() || collapseAnimation.isRunning()) {
+            return super.onTouchEvent(event);
         }
-        return super.onTouchEvent(event);
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                mDownX = event.getRawX();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                //滑动距离
+                float deltaX = event.getRawX() - mDownX;
+                //设置角度
+                float rotation = (deltaX / (float) (getWidth() * 0.8)) * ROTATE_COLLAPSE;
+                if (rotation <= ROTATE_EXPAND && rotation >= ROTATE_COLLAPSE) {
+                    setRotation(rotation);
+                } else if (rotation > ROTATE_EXPAND) {
+                    setRotation(ROTATE_EXPAND);
+                } else if (rotation < ROTATE_COLLAPSE) {
+                    setRotation(ROTATE_COLLAPSE);
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
+                if (getRotation() < ROTATE_COLLAPSE / 3) {
+                    collapse();
+                } else {
+                    expand();
+                }
+                break;
+        }
+        return true;
     }
 
 }
