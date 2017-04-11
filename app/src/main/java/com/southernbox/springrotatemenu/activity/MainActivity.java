@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvTitle = (TextView) findViewById(R.id.tv_title);
 
         FrameLayout root = (FrameLayout) findViewById(R.id.root);
-        View contentHamburger = findViewById(R.id.iv_menu);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         springRotateMenu = (SpringRotateMenu) LayoutInflater.from(this).inflate(R.layout.menu, root, false);
         root.addView(springRotateMenu);
-        springRotateMenu.setExpandButton(contentHamburger);
+        springRotateMenu.setExpandButton(findViewById(R.id.iv_menu));
         springRotateMenu.setCollapseButton(springRotateMenu.findViewById(R.id.iv_menu));
         springRotateMenu.setAnimationListener(new SpringRotateMenu.OnAnimationListener() {
 

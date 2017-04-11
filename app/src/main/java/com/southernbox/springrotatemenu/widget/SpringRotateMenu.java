@@ -119,7 +119,6 @@ public class SpringRotateMenu extends FrameLayout {
     public void expand() {
         setVisibility(VISIBLE);
         expandAnimation.start();
-
         if (listener != null) {
             listener.expandBegin();
             collapseAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() {
