@@ -1,4 +1,4 @@
-package com.southernbox.springrotatemenu;
+package com.southernbox.springrotatemenu.widget;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,30 +11,26 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.Display;
 import android.view.MotionEvent;
-import android.view.VelocityTracker;
 import android.view.View;
 import android.widget.FrameLayout;
 
 /**
- * Created by nanquan.lin on 2017/4/10 0010.
+ * Created by SouthernBox on 2017/4/10 0010.
  * 旋转菜单控件
  */
 
 public class SpringRotateMenu extends FrameLayout {
 
-    private SpringAnimation expandAnimation;
-    private SpringAnimation collapseAnimation;
-
-    private OnAnimationListener listener;
-
     private final static int ROTATE_EXPAND = 0;
     private final static int ROTATE_COLLAPSE = -90;
 
-    private VelocityTracker velocityTracker;
+    private SpringAnimation expandAnimation;
+    private SpringAnimation collapseAnimation;
 
     private int screenWidth;
+    private OnAnimationListener listener;
 
-    interface OnAnimationListener {
+    public interface OnAnimationListener {
 
         /**
          * 开始展开
@@ -82,8 +78,6 @@ public class SpringRotateMenu extends FrameLayout {
         Point p = new Point();
         display.getSize(p);
         screenWidth = p.x;
-        //初始化速度追踪器
-        velocityTracker = VelocityTracker.obtain();
     }
 
     /**
@@ -175,18 +169,14 @@ public class SpringRotateMenu extends FrameLayout {
                 } else if (rotation < ROTATE_COLLAPSE) {
                     setRotation(ROTATE_COLLAPSE);
                 }
-                //添加事件到 VelocityTracker
-                velocityTracker.addMovement(event);
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
-                velocityTracker.computeCurrentVelocity(1000);
-                if (getRotation() < ROTATE_COLLAPSE / 3 || velocityTracker.getXVelocity() < -1000) {
+                if (getRotation() < ROTATE_COLLAPSE / 3) {
                     collapse();
                 } else {
                     expand();
                 }
-                velocityTracker.clear();
                 break;
         }
         return true;

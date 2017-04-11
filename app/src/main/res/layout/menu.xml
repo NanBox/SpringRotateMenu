@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.southernbox.springrotatemenu.widget.SpringRotateMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/menu_margin"
+    android:layout_marginEnd="@dimen/menu_margin"
+    android:layout_marginRight="@dimen/menu_margin"
+    android:layout_marginTop="@dimen/menu_margin"
+    android:background="@color/colorPrimary"
+    android:paddingBottom="@dimen/menu_padding"
+    android:paddingEnd="@dimen/menu_padding"
+    android:paddingLeft="0dp"
+    android:paddingRight="@dimen/menu_padding"
+    android:paddingStart="0dp"
+    android:paddingTop="@dimen/menu_padding"
+    android:transformPivotX="@dimen/menu_pivot_x"
+    android:transformPivotY="@dimen/menu_pivot_y">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentInsetStart="0dp">
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="@dimen/toolbar_height"
+            android:layout_height="@dimen/toolbar_height"
+            android:rotation="90"
+            android:scaleType="center"
+            android:src="@drawable/ic_menu"
+            tools:ignore="ContentDescription" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="150dp">
+
+        <TextView
+            android:id="@+id/tv_stark"
+            style="@style/TextView.MenuItem"
+            android:text="@string/stark"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/tv_lannister"
+            style="@style/TextView.MenuItem"
+            android:text="@string/lannister" />
+
+        <TextView
+            android:id="@+id/tv_baratheon"
+            style="@style/TextView.MenuItem"
+            android:text="@string/baratheon" />
+
+    </LinearLayout>
+
+</com.southernbox.springrotatemenu.widget.SpringRotateMenu>
