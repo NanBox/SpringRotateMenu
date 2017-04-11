@@ -1,15 +1,12 @@
 package com.southernbox.springrotatemenu.widget;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Point;
 import android.support.animation.DynamicAnimation;
 import android.support.animation.SpringAnimation;
 import android.support.annotation.AttrRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -27,7 +24,6 @@ public class SpringRotateMenu extends FrameLayout {
     private SpringAnimation expandAnimation;
     private SpringAnimation collapseAnimation;
 
-    private int screenWidth;
     private OnAnimationListener listener;
 
     public interface OnAnimationListener {
@@ -73,11 +69,6 @@ public class SpringRotateMenu extends FrameLayout {
         //折叠动画
         collapseAnimation = new SpringAnimation(this, SpringAnimation.ROTATION, ROTATE_COLLAPSE);
         collapseAnimation.getSpring().setDampingRatio(0.60f);
-        //获取屏幕宽度
-        Display display = ((Activity) context).getWindowManager().getDefaultDisplay();
-        Point p = new Point();
-        display.getSize(p);
-        screenWidth = p.x;
     }
 
     /**
@@ -159,7 +150,7 @@ public class SpringRotateMenu extends FrameLayout {
                 //滑动距离
                 float deltaX = event.getRawX() - mDownX;
                 //设置角度
-                float rotation = (deltaX / (float) (screenWidth * 0.8)) * ROTATE_COLLAPSE;
+                float rotation = (deltaX / (float) (getWidth() * 0.8)) * ROTATE_COLLAPSE;
                 if (rotation <= ROTATE_EXPAND && rotation >= ROTATE_COLLAPSE) {
                     setRotation(rotation);
                 } else if (rotation > ROTATE_EXPAND) {
