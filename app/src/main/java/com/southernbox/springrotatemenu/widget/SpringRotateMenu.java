@@ -117,7 +117,10 @@ public class SpringRotateMenu extends FrameLayout {
             listener.expandBegin();
             collapseAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() {
                 @Override
-                public void onAnimationEnd(DynamicAnimation animation, boolean canceled, float value, float velocity) {
+                public void onAnimationEnd(DynamicAnimation animation,
+                                           boolean canceled,
+                                           float value,
+                                           float velocity) {
                     setVisibility(INVISIBLE);
                     listener.expandEnd();
                 }
@@ -134,7 +137,10 @@ public class SpringRotateMenu extends FrameLayout {
             listener.collapseBegin();
             collapseAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() {
                 @Override
-                public void onAnimationEnd(DynamicAnimation animation, boolean canceled, float value, float velocity) {
+                public void onAnimationEnd(DynamicAnimation animation,
+                                           boolean canceled,
+                                           float value,
+                                           float velocity) {
                     listener.collapseEnd();
                 }
             });
