@@ -162,7 +162,7 @@ public class SpringRotateMenu extends FrameLayout {
                 //滑动距离
                 float deltaX = event.getRawX() - mDownX;
                 //设置角度
-                float rotation = (deltaX / (float) (getWidth() * 0.8)) * ROTATE_COLLAPSE;
+                float rotation = (deltaX / (getWidth() * 0.8f)) * ROTATE_COLLAPSE;
                 if (rotation <= ROTATE_EXPAND && rotation >= ROTATE_COLLAPSE) {
                     setRotation(rotation);
                 } else if (rotation > ROTATE_EXPAND) {
