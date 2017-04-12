@@ -21,7 +21,7 @@ Gif 图可能不明显，菜单展开和收起的时候是会抖一下的，有�
 
 关于 SpringAnimation，我之前的这篇会有更详细的介绍：
 
-[实现一个带下拉弹簧动画的 ScrollView](http://www.jianshu.com/p/ce6497cada9c)
+[实现一个带下拉弹簧动画的 ScrollView](https://github.com/SouthernBox/SpringScrollView)
 
 SpringAnimation 支持平移、缩放、旋转等效果，这次我们用到的是它的旋转效果。
 
