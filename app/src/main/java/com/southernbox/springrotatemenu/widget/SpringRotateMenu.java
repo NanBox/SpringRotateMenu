@@ -24,6 +24,7 @@ public class SpringRotateMenu extends FrameLayout {
     private SpringAnimation expandAnimation;
     private SpringAnimation collapseAnimation;
 
+    private int screenWidth;
     private OnAnimationListener listener;
 
     public interface OnAnimationListener {
@@ -72,6 +73,8 @@ public class SpringRotateMenu extends FrameLayout {
         //折叠动画
         collapseAnimation = new SpringAnimation(this, SpringAnimation.ROTATION, ROTATE_COLLAPSE);
         collapseAnimation.getSpring().setDampingRatio(0.60f);
+        //获取屏幕宽度
+        screenWidth = context.getResources().getDisplayMetrics().widthPixels;
     }
 
     /**
@@ -162,7 +165,7 @@ public class SpringRotateMenu extends FrameLayout {
                 //滑动距离
                 float deltaX = event.getRawX() - mDownX;
                 //设置角度
-                float rotation = (deltaX / (getWidth() * 0.8f)) * ROTATE_COLLAPSE;
+                float rotation = (deltaX / (screenWidth * 0.8f)) * ROTATE_COLLAPSE;
                 if (rotation <= ROTATE_EXPAND && rotation >= ROTATE_COLLAPSE) {
                     setRotation(rotation);
                 } else if (rotation > ROTATE_EXPAND) {
