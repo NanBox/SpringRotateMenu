@@ -14,8 +14,8 @@
     <style name="CardView" />
 
     <style name="CardView.FragmentItem">
-        <item name="android:layout_width">340dp</item>
-        <item name="android:layout_height">255dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">10dp</item>
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="cardElevation">5dp</item>
@@ -25,6 +25,7 @@
 
     <style name="ImageView.FragmentItem">
         <item name="android:scaleType">centerCrop</item>
+        <item name="android:adjustViewBounds">true</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
     </style>
