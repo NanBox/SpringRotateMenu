@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="menu_margin">-100dp</dimen>
+    <dimen name="menu_padding">100dp</dimen>
+    <dimen name="menu_pivot_x">28dp</dimen>
+    <dimen name="menu_pivot_y">128dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+</resources>
