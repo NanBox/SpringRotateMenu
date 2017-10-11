@@ -1,8 +1,8 @@
 package com.southernbox.springrotatemenu.widget
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.support.animation.SpringAnimation
-import android.support.annotation.AttrRes
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -15,14 +15,14 @@ import android.widget.FrameLayout
 
 class SpringRotateMenu @JvmOverloads constructor(context: Context,
                                                  attrs: AttributeSet? = null,
-                                                 @AttrRes defStyleAttr: Int = 0)
+                                                 defStyleAttr: Int = 0)
     : FrameLayout(context, attrs, defStyleAttr) {
 
-    private val expandAnimation: SpringAnimation
-    private val collapseAnimation: SpringAnimation
+    val expandAnimation: SpringAnimation
+    val collapseAnimation: SpringAnimation
 
-    private val screenWidth: Int
-    private var listener: OnAnimationListener? = null
+    val screenWidth: Int
+    var listener: OnAnimationListener? = null
 
     companion object {
         private val ROTATE_EXPAND = 0
@@ -120,34 +120,31 @@ class SpringRotateMenu @JvmOverloads constructor(context: Context,
 
     private var mDownX: Float = 0.toFloat()
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent): Boolean {
         if (expandAnimation.isRunning || collapseAnimation.isRunning) {
             return super.onTouchEvent(event)
         }
         when (event.action) {
-            MotionEvent.ACTION_DOWN -> {
+            MotionEvent.ACTION_DOWN ->
                 mDownX = event.rawX
-            }
             MotionEvent.ACTION_MOVE -> {
                 //滑动距离
                 val deltaX = event.rawX - mDownX
                 //设置角度
                 val rotation = deltaX / (screenWidth * 0.8f) * ROTATE_COLLAPSE
-                if (rotation in ROTATE_COLLAPSE..ROTATE_EXPAND) {
-                    setRotation(rotation)
-                } else if (rotation > ROTATE_EXPAND) {
-                    setRotation(ROTATE_EXPAND.toFloat())
-                } else if (rotation < ROTATE_COLLAPSE) {
-                    setRotation(ROTATE_COLLAPSE.toFloat())
+                when {
+                    rotation in ROTATE_COLLAPSE..ROTATE_EXPAND -> setRotation(rotation)
+                    rotation > ROTATE_EXPAND -> setRotation(ROTATE_EXPAND.toFloat())
+                    rotation < ROTATE_COLLAPSE -> setRotation(ROTATE_COLLAPSE.toFloat())
                 }
             }
-            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL ->
                 if (rotation < ROTATE_COLLAPSE / 3) {
                     collapse()
                 } else {
                     expand()
                 }
-            }
         }
         return true
     }

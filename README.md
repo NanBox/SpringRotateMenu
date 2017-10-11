@@ -3,7 +3,7 @@
 
 我也不知道怎么描述这个效果了，直接放效果图吧：
 
-![](images/SpringRotateMenu.gif)
+![](http://upload-images.jianshu.io/upload_images/1763614-6902677cf6f2e4c8.gif?imageMogr2/auto-orient/strip)
 
 炸不炸！
 
