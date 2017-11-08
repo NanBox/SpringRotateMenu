@@ -1,4 +1,4 @@
-package com.southernbox.springrotatemenu.sample.activity
+package com.southernbox.springrotatemenu.sample
 
 import android.graphics.Color
 import android.os.Bundle
@@ -8,8 +8,6 @@ import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import com.southernbox.springrotatemenu.SpringRotateMenu
-import com.southernbox.springrotatemenu.sample.R
-import com.southernbox.springrotatemenu.sample.fragment.MainFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.menu.*
 
@@ -20,9 +18,9 @@ import kotlinx.android.synthetic.main.menu.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    lateinit var starkFragment: Fragment
-    lateinit var lannisterFragment: Fragment
-    lateinit var baratheonFragment: Fragment
+    private lateinit var starkFragment: Fragment
+    private lateinit var lannisterFragment: Fragment
+    private lateinit var baratheonFragment: Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

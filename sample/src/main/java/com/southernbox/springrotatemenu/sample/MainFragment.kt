@@ -1,4 +1,4 @@
-package com.southernbox.springrotatemenu.sample.fragment
+package com.southernbox.springrotatemenu.sample
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

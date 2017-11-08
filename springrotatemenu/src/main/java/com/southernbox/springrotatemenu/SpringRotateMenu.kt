@@ -18,11 +18,11 @@ class SpringRotateMenu @JvmOverloads constructor(context: Context,
                                                  defStyleAttr: Int = 0)
     : FrameLayout(context, attrs, defStyleAttr) {
 
-    val expandAnimation: SpringAnimation
-    val collapseAnimation: SpringAnimation
+    private val expandAnimation: SpringAnimation
+    private val collapseAnimation: SpringAnimation
 
-    val screenWidth: Int
-    var listener: OnAnimationListener? = null
+    private val screenWidth: Int
+    private var listener: OnAnimationListener? = null
 
     companion object {
         private val ROTATE_EXPAND = 0
