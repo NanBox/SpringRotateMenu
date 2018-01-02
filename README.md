@@ -1,5 +1,6 @@
 [![](https://travis-ci.org/SouthernBox/SpringRotateMenu.svg?branch=master)](https://travis-ci.org/SouthernBox/SpringRotateMenu)
 [![](https://api.bintray.com/packages/southernbox/maven/SpringRotateMenu/images/download.svg)](https://bintray.com/southernbox/maven/SpringRotateMenu/_latestVersion)
+[![](https://img.shields.io/badge/Android%20Arsenal-SpringRotateMenu-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6609)
 [![](https://img.shields.io/badge/API-16+-green.svg?style=flat)](https://android-arsenal.com/api?level=16)
 [![](https://badge.juejin.im/entry/58edcf2ba0bb9f006a4da090/likes.svg?style=flat)](https://juejin.im/post/58edcec344d904005774e6cf)
 
